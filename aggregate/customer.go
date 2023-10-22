@@ -10,10 +10,10 @@ import (
 
 type Customer struct {
 	// Person is the root entity of customer
-	// which means person.ID is the main identifier for the customer
-	person       *entity.Person
-	products     []*entity.Item
-	transactions []valueobject.Transaction
+	// which means Person.ID is the main identifier for the customer
+	Person       *entity.Person
+	Products     []*entity.Item
+	Transactions []valueobject.Transaction
 }
 
 var (
@@ -31,8 +31,8 @@ func NewCustomer(name string) (Customer, error) {
 		Name: name,
 	}
 	return Customer{
-		person:       person,
-		products:     make([]*entity.Item, 0),
-		transactions: make([]valueobject.Transaction, 0),
+		Person:       person,
+		Products:     make([]*entity.Item, 0),
+		Transactions: make([]valueobject.Transaction, 0),
 	}, nil
 }
