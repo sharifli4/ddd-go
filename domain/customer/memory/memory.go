@@ -14,10 +14,8 @@ type MemoryRepository struct {
 	sync.Mutex
 }
 
-func New(customers map[uuid.UUID]aggregate.Customer) *MemoryRepository {
-	return &MemoryRepository{
-		customers: customers,
-	}
+func New() *MemoryRepository {
+	return &MemoryRepository{}
 }
 func (mr *MemoryRepository) Get(id uuid.UUID) (aggregate.Customer, error) {
 	if customer, ok := mr.customers[id]; ok {
