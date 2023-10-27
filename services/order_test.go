@@ -41,7 +41,7 @@ func TestNewOrderService(t *testing.T) {
 	order := []uuid.UUID{
 		products[0].Item().ID,
 	}
-	if err := os.CreateOrder(cust.Person.ID, order); err != nil {
+	if _, err := os.CreateOrder(cust.Person.ID, order); err != nil {
 		t.Error(err)
 	}
 }
